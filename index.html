@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PCP CALCULOS</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-mark">P</div><div><strong>PCP CALCULOS</strong><span>Planejamento Industrial</span></div></div>
+    <nav class="menu">
+      <span class="menu-label">PRINCIPAL</span>
+      <button class="menu-item active" id="menuNovoCalculo"><span>＋</span>Novo cálculo</button>
+      <button class="menu-item" id="menuHistorico"><span>◷</span>Histórico</button>
+      <span class="menu-label">CADASTROS</span>
+      <button class="menu-item" id="menuMateriais"><span>◆</span>Materiais</button>
+      <span class="menu-label">SISTEMA</span>
+      <button class="menu-item" id="menuConfiguracoes"><span>⚙</span>Configurações</button>
+    </nav>
+    <div class="sidebar-footer"><span class="status-dot"></span><div><strong>CALCULOS PCP</strong><small>VERSAO BETA</small></div></div>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div><span class="breadcrumb" id="breadcrumb">PCP / Novo cálculo</span><h1 id="pageTitle">Planejamento de produção</h1><p id="pageSubtitle">Cálculos padronizados para apoio ao PCP.</p></div>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Alternar tema"><span id="themeIcon">☾</span></button>
+    </header>
+
+    <div class="content">
+      <section id="screenNovoCalculo" class="screen active-screen">
+        <div class="section-header"><span class="eyebrow">NOVO CÁLCULO</span><h2>Selecione o processo</h2><p>Escolha o fluxo produtivo. O formulário e os cálculos serão adaptados automaticamente.</p></div>
+        <div class="process-grid">
+          <button class="process-card" data-process="extrusao-rebobinagem"><span class="card-icon">↗</span><div><div class="card-title"><h3>Extrusão → Rebobinagem</h3><span class="tag">PESO</span></div><p>Planejamento de filme extrudado e bobinas para rebobinagem.</p><small>Refile padrão configurável</small></div></button>
+          <button class="process-card" data-process="impresso-monocamada"><span class="card-icon">▤</span><div><div class="card-title"><h3>Impresso monocamada</h3><span class="tag">PESO</span></div><p>Filme único com consumo de tinta e composição final.</p><small>Tinta configurável</small></div></button>
+          <button class="process-card" data-process="impresso-laminado"><span class="card-icon">▥</span><div><div class="card-title"><h3>Impresso laminado</h3><span class="tag">PESO</span></div><p>De 1 a 4 laminações, 1 filme impresso e metragem casada.</p><small>1 a 4 laminações</small></div></button>
+          <button class="process-card" data-process="liso-laminado"><span class="card-icon">▰</span><div><div class="card-title"><h3>Liso laminado</h3><span class="tag">PESO</span></div><p>De 1 a 4 laminações, sem impressão e com metragem casada.</p><small>1 a 4 laminações</small></div></button>
+          <button class="process-card" data-process="sacaria-lisa"><span class="card-icon">◇</span><div><div class="card-title"><h3>Sacaria lisa</h3><span class="tag">METRAGEM</span></div><p>Quantidade de sacos, passo e conversão automática para peso.</p><small>Sem impressão</small></div></button>
+          <button class="process-card" data-process="sacaria-impressa"><span class="card-icon">▤</span><div><div class="card-title"><h3>Sacaria impressa</h3><span class="tag">METRAGEM</span></div><p>Extrusão → Impressão → Corte e solda. Tinta, juntas e perdas no planejamento.</p><small>Filme único impresso</small></div></button>
+          <button class="process-card" data-process="sacaria-impressa-laminada"><span class="card-icon">▧</span><div><div class="card-title"><h3>Sacaria impressa laminada</h3><span class="tag">METRAGEM</span></div><p>Sacaria laminada com metragem como base, tinta e adesivos por passe.</p><small>Estrutura completa</small></div></button>
+        </div>
+      </section>
+
+      <section id="screenCalculo" class="screen">
+        <button class="back-button" id="btnVoltarProcessos">← Voltar aos processos</button>
+        <div class="section-header compact"><span class="eyebrow">CÁLCULO</span><h2 id="calculoTitulo">Processo</h2><p>Preencha somente os dados técnicos necessários.</p></div>
+        <div id="calculoContainer"></div>
+      </section>
+
+      <section id="screenHistorico" class="screen"><div id="historicoContainer"></div></section>
+      <section id="screenMateriais" class="screen"><div id="materiaisContainer"></div></section>
+      <section id="screenEstruturas" class="screen"><div id="estruturasContainer"></div></section>
+      <section id="screenConfiguracoes" class="screen"><div id="configuracoesContainer"></div></section>
+    </div>
+  </main>
+
+  <script src="js/materiais.js"></script>
+  <script src="js/processos.js"></script>
+  <script src="js/calculos.js"></script>
+  <script src="js/extrusao.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
